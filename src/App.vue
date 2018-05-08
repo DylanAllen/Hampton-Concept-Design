@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto+Mono" rel="stylesheet">
     <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
@@ -38,7 +39,7 @@ body {
   margin: 0;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -67,10 +68,14 @@ h1 {
   font-size: 18vw;
 }
 
+h1, h2, h3 {
+  font-family: 'Roboto Mono', monospace;
+}
+
 #section2 h2 {
-    padding-top: 20vh;
-    font-size: 6vw;
-    text-align: center;
+  padding: 20vh 0 0 20px;
+  font-size: 6vw;
+  text-align: left;
 }
 
 section {
@@ -87,6 +92,7 @@ section#section2 {
 #section3 {
   background-color: rgba(255,255,255,0.8);
   z-index: 40;
+  overflow: hidden;
 }
 
 h2.spinner {
@@ -105,6 +111,17 @@ h1.second-title {
 h3 {
   margin: 40px 0 0;
 }
+
+p.backgrounded {
+    background-color: red;
+    color: #ffffff;
+    width: 100%;
+    margin: 0;
+    display: block;
+    text-align: center;
+    max-width: 100%;
+    padding: 20px 0;
+}
 ul {
   list-style-type: none;
   padding: 0;
@@ -120,9 +137,9 @@ a {
 p {
   max-width: 800px;
   padding: 20px;
-  margin: auto;
-  font-size:20px;
-  text-align:left;
+  margin: 0;
+  font-size: 20px;
+  text-align: left;
 }
 .reveal .first-title h1 {
     transform: translateX(-300px);
@@ -160,21 +177,25 @@ h1#second-text {
 
 #floater {
   position: fixed;
-  transition: all 0.2s ease-out;
-  height: 5vh;
+  transition: all 0.4s ease-in;
+  transform-origin: center left;
   width: 100vw;
   background-color: red;
+  top: 97vh;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index:900;
 }
 
-#floater.left {
+#floater.right {
   height: 100vh;
-  width: 5vw;
   top: 0;
-  left: 0;
-  right: auto;
+  right: 0;
+  left: 99vw;
   bottom: 0;
+  transform: rotate(360deg);
+  background-color: rgba(0,0,0,0.5);
 }
+
 </style>
